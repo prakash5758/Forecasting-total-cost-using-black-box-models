@@ -1,0 +1,665 @@
+{
+  "GULF COAST EAST": {
+    "reservoirs_of_interest": [
+      "HAYNESVILLE",
+      "BOSSIER",
+      "COTTON VALLEY",
+      "AUSTIN CHALK"
+    ],
+    "filtering_config": {
+      "cols_to_keep": [
+        "TotalWellCost_USDMM",
+        "Proppant_LBSPerFT",
+        "Fluid_BBLPerFT",
+        "LateralLength_FT",
+        "LatitudeMP",
+        "TVD_FT",
+        "LongitudeMP",
+        "cost/ft_Lateral",
+        "ReservoirGoldConsolidated",
+        "OperatorGold"
+      ],
+      "technical_filtering": {
+        "percentile": true,
+        "thresholds": {
+          "Proppant_LBSPerFT": [
+            0.025,
+            0.975
+          ],
+          "Fluid_BBLPerFT": [
+            0.025,
+            0.975
+          ],
+          "TVD_FT": [
+            0.025,
+            0.999
+          ],
+          "LateralLength_FT": [
+            0.025,
+            0.975
+          ],
+          "cost/ft_Lateral": [
+            0.025,
+            0.999
+          ]
+        }
+      }
+    },
+    "input_features": [
+      "Proppant_LBSPerFT",
+      "Fluid_BBLPerFT",
+      "LateralLength_FT",
+      "LatitudeMP",
+      "LongitudeMP"
+    ],
+    "target_features": [
+      "cost/ft_Lateral"
+    ],
+    "encode": true,
+    "categorical_feature": ["ReservoirGoldConsolidated", "OperatorGold"],
+    "operator_threshold": 50,
+    "transformations": null,
+    "split_data": {
+      "test_data": true,
+      "test_data_ratio": 0.1,
+      "validation_data_ratio": 0.2
+    },
+    "scale_data": {
+      "scale_x": true,
+      "scale_y": false
+    },
+    "training_config": {
+      "HuberRegressor": {"max_iter": 1000}
+    },
+    "hyperparam_tuning_config": null
+  },
+  "MIDLAND": {
+    "reservoirs_of_interest": [
+      "SPRABERRY MIDDLE",
+      "JO MILL",
+      "SPRABERRY LOWER",
+      "DEAN",
+      "WOLFCAMP A",
+      "WOLFCAMP B",
+      "WOLFCAMP C",
+      "WOLFCAMP D"
+    ],
+    "filtering_config": {
+      "cols_to_keep": [
+        "TotalWellCost_USDMM",
+        "Proppant_LBSPerFT",
+        "Fluid_BBLPerFT",
+        "LateralLength_FT",
+        "LatitudeMP",
+        "TVD_FT",
+        "LongitudeMP",
+        "cost/ft_Lateral",
+        "ReservoirGoldConsolidated",
+        "OperatorGold"
+      ],
+      "technical_filtering": {
+        "percentile": true,
+        "thresholds": {
+          "Proppant_LBSPerFT": [
+            0.025,
+            0.975
+          ],
+          "Fluid_BBLPerFT": [
+            0.025,
+            0.975
+          ],
+          "TVD_FT": [
+            0.025,
+            0.999
+          ],
+          "LateralLength_FT": [
+            0.025,
+            0.975
+          ],
+          "cost/ft_Lateral": [
+            0.025,
+            0.975
+          ]
+        }
+      }
+    },
+    "input_features": [
+      "Proppant_LBSPerFT",
+      "Fluid_BBLPerFT",
+      "LateralLength_FT",
+      "LatitudeMP",
+      "LongitudeMP"
+    ],
+    "target_features": [
+      "cost/ft_Lateral"
+    ],
+    "encode": true,
+    "categorical_feature": ["ReservoirGoldConsolidated", "OperatorGold"],
+    "operator_threshold": 50,
+    "transformations": null,
+    "split_data": {
+      "test_data": true,
+      "test_data_ratio": 0.1,
+      "validation_data_ratio": 0.2
+    },
+    "scale_data": {
+      "scale_x": true,
+      "scale_y": false
+    },
+    "training_config": {
+      "HuberRegressor": {"max_iter": 1000}
+    },
+    "hyperparam_tuning_config": null
+  },
+  "ANADARKO EAST": {
+    "reservoirs_of_interest": [
+      "WOODFORD",
+      "MISSISSIPPIAN"
+    ],
+    "filtering_config": {
+      "cols_to_keep": [
+        "TotalWellCost_USDMM",
+        "Proppant_LBSPerFT",
+        "Fluid_BBLPerFT",
+        "LateralLength_FT",
+        "LatitudeMP",
+        "TVD_FT",
+        "LongitudeMP",
+        "cost/ft_Lateral",
+        "ReservoirGoldConsolidated",
+        "OperatorGold"
+      ],
+      "technical_filtering": {
+        "percentile": true,
+        "thresholds": {
+          "Proppant_LBSPerFT": [
+            0.025,
+            0.975
+          ],
+          "Fluid_BBLPerFT": [
+            0.025,
+            0.975
+          ],
+          "TVD_FT": [
+            0.025,
+            0.999
+          ],
+          "LateralLength_FT": [
+            0.025,
+            0.975
+          ],
+          "cost/ft_Lateral": [
+            0.025,
+            0.999
+          ]
+        }
+      }
+    },
+    "input_features": [
+      "Proppant_LBSPerFT",
+      "Fluid_BBLPerFT",
+      "LateralLength_FT",
+      "LatitudeMP",
+      "LongitudeMP"
+    ],
+    "target_features": [
+      "cost/ft_Lateral"
+    ],
+    "encode": true,
+    "categorical_feature": ["ReservoirGoldConsolidated", "OperatorGold"],
+    "operator_threshold": 50,
+    "transformations": {
+
+      "LateralLength_FT":"log",
+      "Proppant_LBSPerFT":"log",
+      "Fluid_BBLPerFT":"log",
+      "cost/ft_Lateral":"log"
+  },
+    "split_data": {
+      "test_data": true,
+      "test_data_ratio": 0.1,
+      "validation_data_ratio": 0.2
+    },
+    "scale_data": {
+      "scale_x": true,
+      "scale_y": false
+    },
+    "training_config": {
+      "HuberRegressor": {"max_iter": 1000}
+    },
+    "hyperparam_tuning_config": null
+  },
+  "DELAWARE": {
+    "reservoirs_of_interest": [
+      "AVALON",
+      "1ST BONE SPRING",
+      "2ND BONE SPRING",
+      "3RD BONE SPRING",
+      "WOLFCAMP XY",
+      "WOLFCAMP A",
+      "WOLFCAMP B",
+      "WOLFCAMP C",
+      "WOLFCAMP D"
+    ],
+    "filtering_config": {
+      "cols_to_keep": [
+        "TotalWellCost_USDMM",
+        "Proppant_LBSPerFT",
+        "Fluid_BBLPerFT",
+        "LateralLength_FT",
+        "LatitudeMP",
+        "TVD_FT",
+        "LongitudeMP",
+        "cost/ft_Lateral",
+        "ReservoirGoldConsolidated"
+      ],
+      "technical_filtering": {
+        "percentile": true,
+        "thresholds": {
+          "Proppant_LBSPerFT": [
+            0.025,
+            0.975
+          ],
+          "Fluid_BBLPerFT": [
+            0.025,
+            0.975
+          ],
+          "TVD_FT": [
+            0.025,
+            0.999
+          ],
+          "LateralLength_FT": [
+            0.025,
+            0.975
+          ],
+          "cost/ft_Lateral": [
+            0.025,
+            0.999
+          ]
+        }
+      }
+    },
+    "input_features": [
+      "Proppant_LBSPerFT",
+      "Fluid_BBLPerFT",
+      "LateralLength_FT",
+      "LatitudeMP",
+      "LongitudeMP"
+    ],
+    "target_features": [
+      "cost/ft_Lateral"
+    ],
+    "encode": true,
+    "categorical_feature": "ReservoirGoldConsolidated",
+    "transformations": null,
+    "split_data": {
+      "test_data": true,
+      "test_data_ratio": 0.1,
+      "validation_data_ratio": 0.2
+    },
+    "scale_data": {
+      "scale_x": true,
+      "scale_y": false
+    },
+    "training_config": {
+      "HuberRegressor": {"max_iter": 1000}
+    },
+    "hyperparam_tuning_config": null
+  },
+  "GULF COAST WEST": {
+    "reservoirs_of_interest": [
+      "EAGLE FORD LOWER",
+      "AUSTIN CHALK",
+      "EAGLE FORD UPPER",
+      "EAGLE FORD"
+    ],
+    "filtering_config": {
+      "cols_to_keep": [
+        "TotalWellCost_USDMM",
+        "Proppant_LBSPerFT",
+        "Fluid_BBLPerFT",
+        "LateralLength_FT",
+        "LatitudeMP",
+        "TVD_FT",
+        "LongitudeMP",
+        "cost/ft_Lateral",
+        "ReservoirGoldConsolidated"
+      ],
+      "technical_filtering": {
+        "percentile": true,
+        "thresholds": {
+          "Proppant_LBSPerFT": [
+            0.025,
+            0.975
+          ],
+          "Fluid_BBLPerFT": [
+            0.025,
+            0.975
+          ],
+          "TVD_FT": [
+            0.025,
+            0.999
+          ],
+          "LateralLength_FT": [
+            0.025,
+            0.975
+          ],
+          "cost/ft_Lateral": [
+            0.025,
+            0.999
+          ]
+        }
+      }
+    },
+    "input_features": [
+      "Proppant_LBSPerFT",
+      "Fluid_BBLPerFT",
+      "LateralLength_FT",
+      "LatitudeMP",
+      "LongitudeMP"
+    ],
+    "target_features": [
+      "cost/ft_Lateral"
+    ],
+    "encode": true,
+    "categorical_feature": "ReservoirGoldConsolidated",
+    "transformations": null,
+    "split_data": {
+      "test_data": true,
+      "test_data_ratio": 0.1,
+      "validation_data_ratio": 0.2
+    },
+    "scale_data": {
+      "scale_x": true,
+      "scale_y": false
+    },
+    "training_config": {
+      "HuberRegressor": {"max_iter": 1000}
+    },
+    "hyperparam_tuning_config": null
+  },
+  "APPALACHIAN": {
+    "reservoirs_of_interest": [
+      "MARCELLUS",
+      "POINT PLEASANT"
+    ],
+    "filtering_config": {
+      "cols_to_keep": [
+        "TotalWellCost_USDMM",
+        "Proppant_LBSPerFT",
+        "Fluid_BBLPerFT",
+        "LateralLength_FT",
+        "LatitudeMP",
+        "TVD_FT",
+        "LongitudeMP",
+        "cost/ft_Lateral",
+        "ReservoirGoldConsolidated"
+      ],
+      "technical_filtering": {
+        "percentile": true,
+        "thresholds": {
+          "Proppant_LBSPerFT": [
+            0.025,
+            0.975
+          ],
+          "Fluid_BBLPerFT": [
+            0.025,
+            0.975
+          ],
+          "TVD_FT": [
+            0.025,
+            0.999
+          ],
+          "LateralLength_FT": [
+            0.025,
+            0.975
+          ],
+          "cost/ft_Lateral": [
+            0.025,
+            0.999
+          ]
+        }
+      }
+    },
+    "input_features": [
+      "Proppant_LBSPerFT",
+      "Fluid_BBLPerFT",
+      "LateralLength_FT",
+      "LatitudeMP",
+      "LongitudeMP"
+    ],
+    "target_features": [
+      "cost/ft_Lateral"
+    ],
+    "encode": true,
+    "categorical_feature": "ReservoirGoldConsolidated",
+    "transformations": null,
+    "split_data": {
+      "test_data": true,
+      "test_data_ratio": 0.1,
+      "validation_data_ratio": 0.2
+    },
+    "scale_data": {
+      "scale_x": true,
+      "scale_y": false
+    },
+    "training_config": {
+      "HuberRegressor": {"max_iter": 1000}
+    },
+    "hyperparam_tuning_config": null
+  },
+  "DJ": {
+    "reservoirs_of_interest": [
+      "NIOBRARA A",
+      "NIOBRARA B",
+      "NIOBRARA C",
+      "CODELL"
+    ],
+    "filtering_config": {
+      "cols_to_keep": [
+        "TotalWellCost_USDMM",
+        "Proppant_LBSPerFT",
+        "Fluid_BBLPerFT",
+        "LateralLength_FT",
+        "LatitudeMP",
+        "TVD_FT",
+        "LongitudeMP",
+        "cost/ft_Lateral",
+        "ReservoirGoldConsolidated"
+      ],
+      "technical_filtering": {
+        "percentile": true,
+        "thresholds": {
+          "Proppant_LBSPerFT": [
+            0.025,
+            0.975
+          ],
+          "Fluid_BBLPerFT": [
+            0.025,
+            0.975
+          ],
+          "TVD_FT": [
+            0.025,
+            0.999
+          ],
+          "LateralLength_FT": [
+            0.025,
+            0.975
+          ],
+          "cost/ft_Lateral": [
+            0.025,
+            0.999
+          ]
+        }
+      }
+    },
+    "input_features": [
+      "Proppant_LBSPerFT",
+      "Fluid_BBLPerFT",
+      "LateralLength_FT",
+      "LatitudeMP",
+      "LongitudeMP"
+    ],
+    "target_features": [
+      "cost/ft_Lateral"
+    ],
+    "encode": true,
+    "categorical_feature": "ReservoirGoldConsolidated",
+    "transformations": null,
+    "split_data": {
+      "test_data": true,
+      "test_data_ratio": 0.1,
+      "validation_data_ratio": 0.2
+    },
+    "scale_data": {
+      "scale_x": true,
+      "scale_y": false
+    },
+    "training_config": {
+      "HuberRegressor": {"max_iter": 1000}
+    },
+    "hyperparam_tuning_config": null
+  },
+  "POWDER RIVER": {
+    "reservoirs_of_interest": [
+      "NIOBRARA B",
+      "TURNER",
+      "NIOBRARA",
+      "PARKMAN"
+    ],
+    "filtering_config": {
+      "cols_to_keep": [
+        "TotalWellCost_USDMM",
+        "Proppant_LBSPerFT",
+        "Fluid_BBLPerFT",
+        "LateralLength_FT",
+        "LatitudeMP",
+        "TVD_FT",
+        "LongitudeMP",
+        "cost/ft_Lateral",
+        "ReservoirGoldConsolidated"
+      ],
+      "technical_filtering": {
+        "percentile": false,
+        "thresholds": {
+          "Proppant_LBSPerFT": [
+            0.025,
+            0.975
+          ],
+          "Fluid_BBLPerFT": [
+            0.025,
+            0.975
+          ],
+          "TVD_FT": [
+            0.025,
+            0.999
+          ],
+          "LateralLength_FT": [
+            0.025,
+            0.975
+          ],
+          "cost/ft_Lateral": [
+            0.025,
+            0.999
+          ]
+        }
+      }
+    },
+    "input_features": [
+      "Proppant_LBSPerFT",
+      "Fluid_BBLPerFT",
+      "LateralLength_FT",
+      "LatitudeMP",
+      "LongitudeMP"
+    ],
+    "target_features": [
+      "cost/ft_Lateral"
+    ],
+    "encode": true,
+    "categorical_feature": "ReservoirGoldConsolidated",
+    "transformations": null,
+    "split_data": {
+      "test_data": true,
+      "test_data_ratio": 0.1,
+      "validation_data_ratio": 0.2
+    },
+    "scale_data": {
+      "scale_x": true,
+      "scale_y": false
+    },
+    "training_config": {
+      "HuberRegressor": {"max_iter": 1000}
+    },
+    "hyperparam_tuning_config": null
+  },
+  "WILLISTON": {
+    "reservoirs_of_interest": [
+      "BAKKEN",
+      "THREE FORKS"
+    ],
+    "filtering_config": {
+      "cols_to_keep": [
+        "TotalWellCost_USDMM",
+        "Proppant_LBSPerFT",
+        "Fluid_BBLPerFT",
+        "LateralLength_FT",
+        "LatitudeMP",
+        "TVD_FT",
+        "LongitudeMP",
+        "cost/ft_Lateral",
+        "ReservoirGoldConsolidated"
+      ],
+      "technical_filtering": {
+        "percentile": true,
+        "thresholds": {
+          "Proppant_LBSPerFT": [
+            0.025,
+            0.975
+          ],
+          "Fluid_BBLPerFT": [
+            0.025,
+            0.975
+          ],
+          "TVD_FT": [
+            0.025,
+            0.999
+          ],
+          "LateralLength_FT": [
+            0.025,
+            0.975
+          ],
+          "cost/ft_Lateral": [
+            0.025,
+            0.999
+          ]
+        }
+      }
+    },
+    "input_features": [
+      "Proppant_LBSPerFT",
+      "Fluid_BBLPerFT",
+      "LateralLength_FT",
+      "LatitudeMP",
+      "LongitudeMP"
+    ],
+    "target_features": [
+      "cost/ft_Lateral"
+    ],
+    "encode": true,
+    "categorical_feature": "ReservoirGoldConsolidated",
+    "transformations": null,
+    "split_data": {
+      "test_data": true,
+      "test_data_ratio": 0.1,
+      "validation_data_ratio": 0.2
+    },
+    "scale_data": {
+      "scale_x": true,
+      "scale_y": false
+    },
+    "training_config": {
+      "HuberRegressor": {"max_iter": 1000}
+    },
+    "hyperparam_tuning_config": null
+  }
+}
